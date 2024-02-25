@@ -8,7 +8,7 @@ package frc.robot.commands.hybrid;
 import com.pathplanner.lib.auto.AutoBuilder;
 import edu.wpi.first.wpilibj2.command.Command;
 
-public class autos extends subroutines {
+public class autos extends SubsystemManager {
 
     
    // private static PathPlannerPath test = PathPlannerPath.fromPathFile("platanop1");

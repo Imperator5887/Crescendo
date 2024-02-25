@@ -14,11 +14,11 @@ import frc.robot.commands.Mecanismos.ShooterButtonCmd;
 import frc.robot.commands.swerve.autoAlign;
 import frc.robot.subsystems.Mecanismos.Pivoteo;
 
-public class subroutines {
+public class SubsystemManager {
 
     Pivoteo arm;
 
-    public subroutines(){
+    public SubsystemManager(){
         
         arm = Pivoteo.getInstance();
 

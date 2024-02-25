@@ -28,8 +28,8 @@ import frc.robot.commands.Mecanismos.PivoteoCommand;
 import frc.robot.commands.Mecanismos.ShooterButtonCmd;
 import frc.robot.commands.Mecanismos.setPivotVelocity;
 import frc.robot.commands.hybrid.autos;
-import frc.robot.commands.hybrid.subroutines;
-import frc.robot.commands.hybrid.subroutines.ShooterState;
+import frc.robot.commands.hybrid.SubsystemManager;
+import frc.robot.commands.hybrid.SubsystemManager.ShooterState;
 import frc.robot.commands.swerve.autoAlign;
 import frc.robot.commands.swerve.swerveDriveComando;
 import frc.robot.commands.swerve.swervePrecisionCommand;
@@ -179,7 +179,7 @@ public class RobotContainer {
 
         
         // Tiro al AMP (Boton de PS)
-        new JoystickButton(placerJoystick, Constants.PS4OIConstants.PSButton).whileTrue(subroutines.shootToAmp()); 
+        new JoystickButton(placerJoystick, Constants.PS4OIConstants.PSButton).whileTrue(SubsystemManager.shootToAmp()); 
 
        // =============================== NOTE SCORING ====================================== //
 
@@ -187,7 +187,7 @@ public class RobotContainer {
         //new JoystickButton(placerJoystick, 5).whileTrue(new ShooterButtonCmd(-0.75)); // 
 
         // SHOOT
-        new JoystickButton(placerJoystick, Constants.PS4OIConstants.topRight).whileTrue(subroutines.shootWithDelay(subroutines.getShootingState(ShooterState.SHOOT_FROM_SUBWOOFER)));
+        new JoystickButton(placerJoystick, Constants.PS4OIConstants.topRight).whileTrue(SubsystemManager.shootWithDelay(SubsystemManager.getShootingState(ShooterState.SHOOT_FROM_SUBWOOFER)));
 
         // recoger
         new JoystickButton(placerJoystick, Constants.PS4OIConstants.cross).whileTrue(new IntakeButtonCmd(-0.5, true));// ********true

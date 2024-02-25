@@ -19,8 +19,8 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Mecanismos.IntakeButtonCmd;
 import frc.robot.commands.Mecanismos.PivoteoCommand;
 import frc.robot.commands.Mecanismos.setPivotVelocity;
-import frc.robot.commands.hybrid.subroutines;
-import frc.robot.commands.hybrid.subroutines.ShooterState;
+import frc.robot.commands.hybrid.SubsystemManager;
+import frc.robot.commands.hybrid.SubsystemManager.ShooterState;
 import frc.robot.subsystems.swerve.swerveSusbsystem;
 
 /**
@@ -62,9 +62,9 @@ public class Robot extends TimedRobot {
         swerve = swerveSusbsystem.getInstance();
         swerve.resetEncoders();
 
-        NamedCommands.registerCommand("shootFromSubwoofer", subroutines.shootWithDelay(subroutines.getShootingState(ShooterState.SHOOT_FROM_SUBWOOFER)));
-        NamedCommands.registerCommand("lowArm", subroutines.lowArm());
-        NamedCommands.registerCommand("lowArmAndShootFromSubwoofer", subroutines.lowArmAndShoot(subroutines.getShootingState(ShooterState.SHOOT_FROM_SUBWOOFER)));
+        NamedCommands.registerCommand("shootFromSubwoofer", SubsystemManager.shootWithDelay(SubsystemManager.getShootingState(ShooterState.SHOOT_FROM_SUBWOOFER)));
+        NamedCommands.registerCommand("lowArm", SubsystemManager.lowArm());
+        NamedCommands.registerCommand("lowArmAndShootFromSubwoofer", SubsystemManager.lowArmAndShoot(SubsystemManager.getShootingState(ShooterState.SHOOT_FROM_SUBWOOFER)));
         NamedCommands.registerCommand("intakeNote", new IntakeButtonCmd(-0.5, true));
         NamedCommands.registerCommand("aimAtSubwoofer", new PivoteoCommand(0.061).withTimeout(2));
         NamedCommands.registerCommand("lowPivotToGround", new setPivotVelocity(0));
