@@ -40,6 +40,8 @@ public class ShooterSubsystem extends SubsystemBase {
     resetEncoder();
   }
 
+  
+
   /** Crea las funciones para las distintas cosas que puede hacer tu sistema **/
   public void setSpeed(double speed){
     motorShooterDer.set(speed);
