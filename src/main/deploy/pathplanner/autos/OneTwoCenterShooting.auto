@@ -18,13 +18,26 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "aimAtSubwoofer"
+                  "name": "lowArm"
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "ShootWithDelay"
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 1.5
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "pushNote"
+                      }
+                    }
+                  ]
                 }
               }
             ]
@@ -62,13 +75,26 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "aimAtWing"
+                  "name": "pivotToShootFar"
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "ShootWithDelay"
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 1.5
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "pushNote"
+                      }
+                    }
+                  ]
                 }
               }
             ]
@@ -100,19 +126,32 @@
           }
         },
         {
-          "type": "parallel",
+          "type": "sequential",
           "data": {
             "commands": [
               {
                 "type": "named",
                 "data": {
-                  "name": "aimAtWing"
+                  "name": "pivotToShootFar"
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "ShootWithDelay"
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 1.5
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "pushNote"
+                      }
+                    }
+                  ]
                 }
               }
             ]

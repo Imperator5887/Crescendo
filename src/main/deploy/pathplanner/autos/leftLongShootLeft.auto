@@ -2,29 +2,42 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.23,
-      "y": 5.5
+      "x": 1.03,
+      "y": 6.49
     },
-    "rotation": 179.18316621536835
+    "rotation": -120.59679836828388
   },
   "command": {
     "type": "sequential",
     "data": {
       "commands": [
         {
-          "type": "parallel",
+          "type": "sequential",
           "data": {
             "commands": [
               {
                 "type": "named",
                 "data": {
-                  "name": "aimAtSubwoofer"
+                  "name": "lowArm"
                 }
               },
               {
-                "type": "named",
+                "type": "parallel",
                 "data": {
-                  "name": "ShootWithDelay"
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 1.5
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "pushNote"
+                      }
+                    }
+                  ]
                 }
               }
             ]
@@ -49,7 +62,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "subwoofer-center-shoot"
+                  "pathName": "left-long-shot-left"
                 }
               }
             ]
@@ -62,51 +75,26 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "aimAtWing"
+                  "name": "lowArm"
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "ShootWithDelay"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "race",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "lowPivotToIntake"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "intakeNote"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "2toAmp"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "race",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "3toAMP"
+                  "commands": [
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 1.5
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "pushNote"
+                      }
+                    }
+                  ]
                 }
               }
             ]
